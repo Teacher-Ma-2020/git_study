@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jie.boot_hello.mapper.RtBoxReplenishVehicleMapper">
+  <resultMap id="BaseResultMap" type="com.jie.boot_hello.entity.RtBoxReplenishVehicle">
+    <!--@mbg.generated-->
+    <!--@Table rt_box_replenish_vehicle-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="store_id" jdbcType="VARCHAR" property="storeId" />
+    <result column="replenish_batch_no" jdbcType="VARCHAR" property="replenishBatchNo" />
+    <result column="replenish_no" jdbcType="VARCHAR" property="replenishNo" />
+    <result column="vehicle_no" jdbcType="VARCHAR" property="vehicleNo" />
+    <result column="is_sealed" jdbcType="BOOLEAN" property="isSealed" />
+    <result column="open_vehicle_time" jdbcType="TIMESTAMP" property="openVehicleTime" />
+    <result column="sealed_vehicle_time" jdbcType="TIMESTAMP" property="sealedVehicleTime" />
+    <result column="employee_no" jdbcType="VARCHAR" property="employeeNo" />
+    <result column="employee_name" jdbcType="VARCHAR" property="employeeName" />
+    <result column="is_delete" jdbcType="BOOLEAN" property="isDelete" />
+    <result column="create_id" jdbcType="VARCHAR" property="createId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_id" jdbcType="VARCHAR" property="updateId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, store_id, replenish_batch_no, replenish_no, vehicle_no, is_sealed, open_vehicle_time, 
+    sealed_vehicle_time, employee_no, employee_name, is_delete, create_id, create_time, 
+    update_id, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from rt_box_replenish_vehicle
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from rt_box_replenish_vehicle
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.jie.boot_hello.entity.RtBoxReplenishVehicle" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into rt_box_replenish_vehicle (store_id, replenish_batch_no, replenish_no, 
+      vehicle_no, is_sealed, open_vehicle_time, 
+      sealed_vehicle_time, employee_no, employee_name, 
+      is_delete, create_id, create_time, 
+      update_id, update_time)
+    values (#{storeId,jdbcType=VARCHAR}, #{replenishBatchNo,jdbcType=VARCHAR}, #{replenishNo,jdbcType=VARCHAR}, 
+      #{vehicleNo,jdbcType=VARCHAR}, #{isSealed,jdbcType=BOOLEAN}, #{openVehicleTime,jdbcType=TIMESTAMP}, 
+      #{sealedVehicleTime,jdbcType=TIMESTAMP}, #{employeeNo,jdbcType=VARCHAR}, #{employeeName,jdbcType=VARCHAR}, 
+      #{isDelete,jdbcType=BOOLEAN}, #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.jie.boot_hello.entity.RtBoxReplenishVehicle" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into rt_box_replenish_vehicle
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="storeId != null">
+        store_id,
+      </if>
+      <if test="replenishBatchNo != null">
+        replenish_batch_no,
+      </if>
+      <if test="replenishNo != null">
+        replenish_no,
+      </if>
+      <if test="vehicleNo != null">
+        vehicle_no,
+      </if>
+      <if test="isSealed != null">
+        is_sealed,
+      </if>
+      <if test="openVehicleTime != null">
+        open_vehicle_time,
+      </if>
+      <if test="sealedVehicleTime != null">
+        sealed_vehicle_time,
+      </if>
+      <if test="employeeNo != null">
+        employee_no,
+      </if>
+      <if test="employeeName != null">
+        employee_name,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createId != null">
+        create_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateId != null">
+        update_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="storeId != null">
+        #{storeId,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishBatchNo != null">
+        #{replenishBatchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishNo != null">
+        #{replenishNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicleNo != null">
+        #{vehicleNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isSealed != null">
+        #{isSealed,jdbcType=BOOLEAN},
+      </if>
+      <if test="openVehicleTime != null">
+        #{openVehicleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sealedVehicleTime != null">
+        #{sealedVehicleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeNo != null">
+        #{employeeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeName != null">
+        #{employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=BOOLEAN},
+      </if>
+      <if test="createId != null">
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jie.boot_hello.entity.RtBoxReplenishVehicle">
+    <!--@mbg.generated-->
+    update rt_box_replenish_vehicle
+    <set>
+      <if test="storeId != null">
+        store_id = #{storeId,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishBatchNo != null">
+        replenish_batch_no = #{replenishBatchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishNo != null">
+        replenish_no = #{replenishNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicleNo != null">
+        vehicle_no = #{vehicleNo,jdbcType=VARCHAR},
+      </if>
+      <if test="isSealed != null">
+        is_sealed = #{isSealed,jdbcType=BOOLEAN},
+      </if>
+      <if test="openVehicleTime != null">
+        open_vehicle_time = #{openVehicleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sealedVehicleTime != null">
+        sealed_vehicle_time = #{sealedVehicleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="employeeNo != null">
+        employee_no = #{employeeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeName != null">
+        employee_name = #{employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=BOOLEAN},
+      </if>
+      <if test="createId != null">
+        create_id = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        update_id = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jie.boot_hello.entity.RtBoxReplenishVehicle">
+    <!--@mbg.generated-->
+    update rt_box_replenish_vehicle
+    set store_id = #{storeId,jdbcType=VARCHAR},
+      replenish_batch_no = #{replenishBatchNo,jdbcType=VARCHAR},
+      replenish_no = #{replenishNo,jdbcType=VARCHAR},
+      vehicle_no = #{vehicleNo,jdbcType=VARCHAR},
+      is_sealed = #{isSealed,jdbcType=BOOLEAN},
+      open_vehicle_time = #{openVehicleTime,jdbcType=TIMESTAMP},
+      sealed_vehicle_time = #{sealedVehicleTime,jdbcType=TIMESTAMP},
+      employee_no = #{employeeNo,jdbcType=VARCHAR},
+      employee_name = #{employeeName,jdbcType=VARCHAR},
+      is_delete = #{isDelete,jdbcType=BOOLEAN},
+      create_id = #{createId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_id = #{updateId,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jie.boot_hello.mapper.RtBoxReplenishBatchMapper">
+  <resultMap id="BaseResultMap" type="com.jie.boot_hello.entity.RtBoxReplenishBatch">
+    <!--@mbg.generated-->
+    <!--@Table rt_box_replenish_batch-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="store_id" jdbcType="VARCHAR" property="storeId" />
+    <result column="entry_warehouse_no" jdbcType="VARCHAR" property="entryWarehouseNo" />
+    <result column="entry_warehouse_name" jdbcType="VARCHAR" property="entryWarehouseName" />
+    <result column="out_warehouse_no" jdbcType="VARCHAR" property="outWarehouseNo" />
+    <result column="out_warehouse_name" jdbcType="VARCHAR" property="outWarehouseName" />
+    <result column="replenish_batch_no" jdbcType="VARCHAR" property="replenishBatchNo" />
+    <result column="transfers_no" jdbcType="VARCHAR" property="transfersNo" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="employee_no" jdbcType="VARCHAR" property="employeeNo" />
+    <result column="employee_name" jdbcType="VARCHAR" property="employeeName" />
+    <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
+    <result column="create_id" jdbcType="VARCHAR" property="createId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_id" jdbcType="VARCHAR" property="updateId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, store_id, entry_warehouse_no, entry_warehouse_name, out_warehouse_no, out_warehouse_name,
+    replenish_batch_no, transfers_no, `status`, employee_no, employee_name, is_delete,
+    create_id, create_time, update_id, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from rt_box_replenish_batch
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from rt_box_replenish_batch
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.jie.boot_hello.entity.RtBoxReplenishBatch" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into rt_box_replenish_batch (store_id, entry_warehouse_no, entry_warehouse_name,
+      out_warehouse_no, out_warehouse_name, replenish_batch_no,
+      transfers_no, `status`, employee_no,
+      employee_name, is_delete, create_id,
+      create_time, update_id, update_time
+      )
+    values (#{storeId,jdbcType=VARCHAR}, #{entryWarehouseNo,jdbcType=VARCHAR}, #{entryWarehouseName,jdbcType=VARCHAR},
+      #{outWarehouseNo,jdbcType=VARCHAR}, #{outWarehouseName,jdbcType=VARCHAR}, #{replenishBatchNo,jdbcType=VARCHAR},
+      #{transfersNo,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{employeeNo,jdbcType=VARCHAR},
+      #{employeeName,jdbcType=VARCHAR}, #{isDelete,jdbcType=TINYINT}, #{createId,jdbcType=VARCHAR},
+      #{createTime,jdbcType=TIMESTAMP}, #{updateId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.jie.boot_hello.entity.RtBoxReplenishBatch" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into rt_box_replenish_batch
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="storeId != null">
+        store_id,
+      </if>
+      <if test="entryWarehouseNo != null">
+        entry_warehouse_no,
+      </if>
+      <if test="entryWarehouseName != null">
+        entry_warehouse_name,
+      </if>
+      <if test="outWarehouseNo != null">
+        out_warehouse_no,
+      </if>
+      <if test="outWarehouseName != null">
+        out_warehouse_name,
+      </if>
+      <if test="replenishBatchNo != null">
+        replenish_batch_no,
+      </if>
+      <if test="transfersNo != null">
+        transfers_no,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="employeeNo != null">
+        employee_no,
+      </if>
+      <if test="employeeName != null">
+        employee_name,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createId != null">
+        create_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateId != null">
+        update_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="storeId != null">
+        #{storeId,jdbcType=VARCHAR},
+      </if>
+      <if test="entryWarehouseNo != null">
+        #{entryWarehouseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="entryWarehouseName != null">
+        #{entryWarehouseName,jdbcType=VARCHAR},
+      </if>
+      <if test="outWarehouseNo != null">
+        #{outWarehouseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="outWarehouseName != null">
+        #{outWarehouseName,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishBatchNo != null">
+        #{replenishBatchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="transfersNo != null">
+        #{transfersNo,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="employeeNo != null">
+        #{employeeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeName != null">
+        #{employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createId != null">
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jie.boot_hello.entity.RtBoxReplenishBatch">
+    <!--@mbg.generated-->
+    update rt_box_replenish_batch
+    <set>
+      <if test="storeId != null">
+        store_id = #{storeId,jdbcType=VARCHAR},
+      </if>
+      <if test="entryWarehouseNo != null">
+        entry_warehouse_no = #{entryWarehouseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="entryWarehouseName != null">
+        entry_warehouse_name = #{entryWarehouseName,jdbcType=VARCHAR},
+      </if>
+      <if test="outWarehouseNo != null">
+        out_warehouse_no = #{outWarehouseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="outWarehouseName != null">
+        out_warehouse_name = #{outWarehouseName,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishBatchNo != null">
+        replenish_batch_no = #{replenishBatchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="transfersNo != null">
+        transfers_no = #{transfersNo,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="employeeNo != null">
+        employee_no = #{employeeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeName != null">
+        employee_name = #{employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createId != null">
+        create_id = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        update_id = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jie.boot_hello.entity.RtBoxReplenishBatch">
+    <!--@mbg.generated-->
+    update rt_box_replenish_batch
+    set store_id = #{storeId,jdbcType=VARCHAR},
+      entry_warehouse_no = #{entryWarehouseNo,jdbcType=VARCHAR},
+      entry_warehouse_name = #{entryWarehouseName,jdbcType=VARCHAR},
+      out_warehouse_no = #{outWarehouseNo,jdbcType=VARCHAR},
+      out_warehouse_name = #{outWarehouseName,jdbcType=VARCHAR},
+      replenish_batch_no = #{replenishBatchNo,jdbcType=VARCHAR},
+      transfers_no = #{transfersNo,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=TINYINT},
+      employee_no = #{employeeNo,jdbcType=VARCHAR},
+      employee_name = #{employeeName,jdbcType=VARCHAR},
+      is_delete = #{isDelete,jdbcType=TINYINT},
+      create_id = #{createId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_id = #{updateId,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+
+
+  <select id="selectBatchListByVo" parameterType="com.jie.boot_hello.vo.queryDataVo.ReplenishBatchVo"
+          resultType="com.jie.boot_hello.entity.RtBoxReplenishBatch">
+    SELECT
+    DISTINCT
+      rp_batch.replenish_batch_no,
+      rp_batch.out_warehouse_name,
+      rp_batch.entry_warehouse_name,
+      rp_batch.transfers_no,
+      rp_batch.status,
+      rp_batch.employee_no,
+      rp_batch.employee_name,
+      rp_batch.create_time
+    from
+        rt_box_replenish_batch rp_batch
+        LEFT JOIN rt_box_replenish_demand rp_demand on rp_demand.store_id=#{storeId,jdbcType=VARCHAR} and rp_batch.replenish_batch_no = rp_demand.replenish_batch_no
+        LEFT JOIN rt_box_replenish_vehicle rp_vehicle on rp_vehicle.store_id=#{storeId,jdbcType=VARCHAR} and rp_vehicle.replenish_batch_no = rp_batch.replenish_batch_no
+        LEFT JOIN rt_box_delivery rp_delivery ON rp_delivery.store_id=#{storeId,jdbcType=VARCHAR} and rp_delivery.replenish_batch_no = rp_batch.replenish_batch_no
+        LEFT JOIN rt_box_receive rp_receive ON rp_receive.store_id=#{storeId,jdbcType=VARCHAR} and rp_receive.delivery_no = rp_receive.delivery_no
+    WHERE
+      rp_batch.store_id = #{storeId,jdbcType=VARCHAR}
+      and rp_batch.out_warehouse_no = #{outWarehouseNo,jdbcType=VARCHAR}
+      and rp_batch.entry_warehouse_no =  #{entryWarehouseNo,jdbcType=VARCHAR}
+      AND rp_batch.create_time >= #{beginDate,jdbcType=TIMESTAMP}
+      AND rp_batch.create_time  <![CDATA[<=]]> #{endDate,jdbcType=TIMESTAMP}
+
+      <if test="status != null and status != ''">
+        AND rp_batch.status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="vehicleNo != null and vehicleNo != ''">
+        AND rp_vehicle.vehicle_no = #{vehicleNo,jdbcType=VARCHAR}
+      </if>
+      <if test="deliveryNo != null and deliveryNo != ''">
+        AND rp_delivery.delivery_no = #{replenishBatchNo,jdbcType=VARCHAR}
+      </if>
+      <if test="rtNo != null and rtNo != ''">
+        AND rp_demand.rtNo = #{rtNo,jdbcType=VARCHAR}
+      </if>
+      <if test="replenishBatchNo != null and replenishBatchNo != ''">
+        AND rp_batch.replenish_batch_no = #{replenishBatchNo,jdbcType=VARCHAR}
+      </if>
+      <if test="employeeName != null and employeeName != ''">
+        AND (rp_batch.employee_name='zcj' or rp_delivery.employee_name='zcj' or rp_receive.employee_name='zcj')
+      </if>
+
+    <if test="pagination != null and pagination">
+      limit ${(curPage-1)*pageSize} , #{pageSize,jdbcType=INTEGER}
+    </if>
+
+  </select>
+
+</mapper>

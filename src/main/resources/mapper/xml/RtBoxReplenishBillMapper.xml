@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jie.boot_hello.mapper.RtBoxReplenishBillMapper">
+  <resultMap id="BaseResultMap" type="com.jie.boot_hello.entity.RtBoxReplenishBill">
+    <!--@mbg.generated-->
+    <!--@Table rt_box_replenish_bill-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="store_id" jdbcType="VARCHAR" property="storeId" />
+    <result column="replenish_batch_no" jdbcType="VARCHAR" property="replenishBatchNo" />
+    <result column="replenish_no" jdbcType="VARCHAR" property="replenishNo" />
+    <result column="replenish_bill_no" jdbcType="VARCHAR" property="replenishBillNo" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="rt_no" jdbcType="VARCHAR" property="rtNo" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+    <result column="prepare_replenish_quantity" jdbcType="DECIMAL" property="prepareReplenishQuantity" />
+    <result column="cancel_quantity" jdbcType="DECIMAL" property="cancelQuantity" />
+    <result column="quantity" jdbcType="DECIMAL" property="quantity" />
+    <result column="finish_time" jdbcType="TIMESTAMP" property="finishTime" />
+    <result column="cancel_time" jdbcType="TIMESTAMP" property="cancelTime" />
+    <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
+    <result column="create_id" jdbcType="VARCHAR" property="createId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_id" jdbcType="VARCHAR" property="updateId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, store_id, replenish_batch_no, replenish_no, replenish_bill_no, `status`, rt_no, 
+    product_name, prepare_replenish_quantity, cancel_quantity, quantity, finish_time, 
+    cancel_time, is_delete, create_id, create_time, update_id, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from rt_box_replenish_bill
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from rt_box_replenish_bill
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.jie.boot_hello.entity.RtBoxReplenishBill" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into rt_box_replenish_bill (store_id, replenish_batch_no, replenish_no, 
+      replenish_bill_no, `status`, rt_no, 
+      product_name, prepare_replenish_quantity, 
+      cancel_quantity, quantity, finish_time, 
+      cancel_time, is_delete, create_id, 
+      create_time, update_id, update_time
+      )
+    values (#{storeId,jdbcType=VARCHAR}, #{replenishBatchNo,jdbcType=VARCHAR}, #{replenishNo,jdbcType=VARCHAR}, 
+      #{replenishBillNo,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, #{rtNo,jdbcType=VARCHAR}, 
+      #{productName,jdbcType=VARCHAR}, #{prepareReplenishQuantity,jdbcType=DECIMAL}, 
+      #{cancelQuantity,jdbcType=DECIMAL}, #{quantity,jdbcType=DECIMAL}, #{finishTime,jdbcType=TIMESTAMP}, 
+      #{cancelTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=TINYINT}, #{createId,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.jie.boot_hello.entity.RtBoxReplenishBill" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into rt_box_replenish_bill
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="storeId != null">
+        store_id,
+      </if>
+      <if test="replenishBatchNo != null">
+        replenish_batch_no,
+      </if>
+      <if test="replenishNo != null">
+        replenish_no,
+      </if>
+      <if test="replenishBillNo != null">
+        replenish_bill_no,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="rtNo != null">
+        rt_no,
+      </if>
+      <if test="productName != null">
+        product_name,
+      </if>
+      <if test="prepareReplenishQuantity != null">
+        prepare_replenish_quantity,
+      </if>
+      <if test="cancelQuantity != null">
+        cancel_quantity,
+      </if>
+      <if test="quantity != null">
+        quantity,
+      </if>
+      <if test="finishTime != null">
+        finish_time,
+      </if>
+      <if test="cancelTime != null">
+        cancel_time,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createId != null">
+        create_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateId != null">
+        update_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="storeId != null">
+        #{storeId,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishBatchNo != null">
+        #{replenishBatchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishNo != null">
+        #{replenishNo,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishBillNo != null">
+        #{replenishBillNo,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="rtNo != null">
+        #{rtNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="prepareReplenishQuantity != null">
+        #{prepareReplenishQuantity,jdbcType=DECIMAL},
+      </if>
+      <if test="cancelQuantity != null">
+        #{cancelQuantity,jdbcType=DECIMAL},
+      </if>
+      <if test="quantity != null">
+        #{quantity,jdbcType=DECIMAL},
+      </if>
+      <if test="finishTime != null">
+        #{finishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cancelTime != null">
+        #{cancelTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createId != null">
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jie.boot_hello.entity.RtBoxReplenishBill">
+    <!--@mbg.generated-->
+    update rt_box_replenish_bill
+    <set>
+      <if test="storeId != null">
+        store_id = #{storeId,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishBatchNo != null">
+        replenish_batch_no = #{replenishBatchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishNo != null">
+        replenish_no = #{replenishNo,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishBillNo != null">
+        replenish_bill_no = #{replenishBillNo,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="rtNo != null">
+        rt_no = #{rtNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="prepareReplenishQuantity != null">
+        prepare_replenish_quantity = #{prepareReplenishQuantity,jdbcType=DECIMAL},
+      </if>
+      <if test="cancelQuantity != null">
+        cancel_quantity = #{cancelQuantity,jdbcType=DECIMAL},
+      </if>
+      <if test="quantity != null">
+        quantity = #{quantity,jdbcType=DECIMAL},
+      </if>
+      <if test="finishTime != null">
+        finish_time = #{finishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cancelTime != null">
+        cancel_time = #{cancelTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createId != null">
+        create_id = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        update_id = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jie.boot_hello.entity.RtBoxReplenishBill">
+    <!--@mbg.generated-->
+    update rt_box_replenish_bill
+    set store_id = #{storeId,jdbcType=VARCHAR},
+      replenish_batch_no = #{replenishBatchNo,jdbcType=VARCHAR},
+      replenish_no = #{replenishNo,jdbcType=VARCHAR},
+      replenish_bill_no = #{replenishBillNo,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=TINYINT},
+      rt_no = #{rtNo,jdbcType=VARCHAR},
+      product_name = #{productName,jdbcType=VARCHAR},
+      prepare_replenish_quantity = #{prepareReplenishQuantity,jdbcType=DECIMAL},
+      cancel_quantity = #{cancelQuantity,jdbcType=DECIMAL},
+      quantity = #{quantity,jdbcType=DECIMAL},
+      finish_time = #{finishTime,jdbcType=TIMESTAMP},
+      cancel_time = #{cancelTime,jdbcType=TIMESTAMP},
+      is_delete = #{isDelete,jdbcType=TINYINT},
+      create_id = #{createId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_id = #{updateId,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jie.boot_hello.mapper.RtBoxVehicleEditMapper">
+  <resultMap id="BaseResultMap" type="com.jie.boot_hello.entity.RtBoxVehicleEdit">
+    <!--@mbg.generated-->
+    <!--@Table rt_box_vehicle_edit-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="store_id" jdbcType="VARCHAR" property="storeId" />
+    <result column="replenish_batch_no" jdbcType="VARCHAR" property="replenishBatchNo" />
+    <result column="vehicle_no" jdbcType="VARCHAR" property="vehicleNo" />
+    <result column="rt_no" jdbcType="VARCHAR" property="rtNo" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+    <result column="course_id" jdbcType="VARCHAR" property="courseId" />
+    <result column="course_name" jdbcType="VARCHAR" property="courseName" />
+    <result column="edit_quantity" jdbcType="DECIMAL" property="editQuantity" />
+    <result column="bef_quantity" jdbcType="DECIMAL" property="befQuantity" />
+    <result column="aft_quantity" jdbcType="DECIMAL" property="aftQuantity" />
+    <result column="shelf_no" jdbcType="VARCHAR" property="shelfNo" />
+    <result column="employee_no" jdbcType="VARCHAR" property="employeeNo" />
+    <result column="employee_name" jdbcType="VARCHAR" property="employeeName" />
+    <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
+    <result column="create_id" jdbcType="VARCHAR" property="createId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_id" jdbcType="VARCHAR" property="updateId" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, store_id, replenish_batch_no, vehicle_no, rt_no, product_name, course_id, course_name, 
+    edit_quantity, bef_quantity, aft_quantity, shelf_no, employee_no, employee_name, 
+    is_delete, create_id, create_time, update_id, update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from rt_box_vehicle_edit
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from rt_box_vehicle_edit
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.jie.boot_hello.entity.RtBoxVehicleEdit" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into rt_box_vehicle_edit (store_id, replenish_batch_no, vehicle_no, 
+      rt_no, product_name, course_id, 
+      course_name, edit_quantity, bef_quantity, 
+      aft_quantity, shelf_no, employee_no, 
+      employee_name, is_delete, create_id, 
+      create_time, update_id, update_time
+      )
+    values (#{storeId,jdbcType=VARCHAR}, #{replenishBatchNo,jdbcType=VARCHAR}, #{vehicleNo,jdbcType=VARCHAR}, 
+      #{rtNo,jdbcType=VARCHAR}, #{productName,jdbcType=VARCHAR}, #{courseId,jdbcType=VARCHAR}, 
+      #{courseName,jdbcType=VARCHAR}, #{editQuantity,jdbcType=DECIMAL}, #{befQuantity,jdbcType=DECIMAL}, 
+      #{aftQuantity,jdbcType=DECIMAL}, #{shelfNo,jdbcType=VARCHAR}, #{employeeNo,jdbcType=VARCHAR}, 
+      #{employeeName,jdbcType=VARCHAR}, #{isDelete,jdbcType=TINYINT}, #{createId,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.jie.boot_hello.entity.RtBoxVehicleEdit" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into rt_box_vehicle_edit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="storeId != null">
+        store_id,
+      </if>
+      <if test="replenishBatchNo != null">
+        replenish_batch_no,
+      </if>
+      <if test="vehicleNo != null">
+        vehicle_no,
+      </if>
+      <if test="rtNo != null">
+        rt_no,
+      </if>
+      <if test="productName != null">
+        product_name,
+      </if>
+      <if test="courseId != null">
+        course_id,
+      </if>
+      <if test="courseName != null">
+        course_name,
+      </if>
+      <if test="editQuantity != null">
+        edit_quantity,
+      </if>
+      <if test="befQuantity != null">
+        bef_quantity,
+      </if>
+      <if test="aftQuantity != null">
+        aft_quantity,
+      </if>
+      <if test="shelfNo != null">
+        shelf_no,
+      </if>
+      <if test="employeeNo != null">
+        employee_no,
+      </if>
+      <if test="employeeName != null">
+        employee_name,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createId != null">
+        create_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateId != null">
+        update_id,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="storeId != null">
+        #{storeId,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishBatchNo != null">
+        #{replenishBatchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicleNo != null">
+        #{vehicleNo,jdbcType=VARCHAR},
+      </if>
+      <if test="rtNo != null">
+        #{rtNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="courseId != null">
+        #{courseId,jdbcType=VARCHAR},
+      </if>
+      <if test="courseName != null">
+        #{courseName,jdbcType=VARCHAR},
+      </if>
+      <if test="editQuantity != null">
+        #{editQuantity,jdbcType=DECIMAL},
+      </if>
+      <if test="befQuantity != null">
+        #{befQuantity,jdbcType=DECIMAL},
+      </if>
+      <if test="aftQuantity != null">
+        #{aftQuantity,jdbcType=DECIMAL},
+      </if>
+      <if test="shelfNo != null">
+        #{shelfNo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeNo != null">
+        #{employeeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeName != null">
+        #{employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createId != null">
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jie.boot_hello.entity.RtBoxVehicleEdit">
+    <!--@mbg.generated-->
+    update rt_box_vehicle_edit
+    <set>
+      <if test="storeId != null">
+        store_id = #{storeId,jdbcType=VARCHAR},
+      </if>
+      <if test="replenishBatchNo != null">
+        replenish_batch_no = #{replenishBatchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicleNo != null">
+        vehicle_no = #{vehicleNo,jdbcType=VARCHAR},
+      </if>
+      <if test="rtNo != null">
+        rt_no = #{rtNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null">
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="courseId != null">
+        course_id = #{courseId,jdbcType=VARCHAR},
+      </if>
+      <if test="courseName != null">
+        course_name = #{courseName,jdbcType=VARCHAR},
+      </if>
+      <if test="editQuantity != null">
+        edit_quantity = #{editQuantity,jdbcType=DECIMAL},
+      </if>
+      <if test="befQuantity != null">
+        bef_quantity = #{befQuantity,jdbcType=DECIMAL},
+      </if>
+      <if test="aftQuantity != null">
+        aft_quantity = #{aftQuantity,jdbcType=DECIMAL},
+      </if>
+      <if test="shelfNo != null">
+        shelf_no = #{shelfNo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeNo != null">
+        employee_no = #{employeeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeName != null">
+        employee_name = #{employeeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=TINYINT},
+      </if>
+      <if test="createId != null">
+        create_id = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null">
+        update_id = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jie.boot_hello.entity.RtBoxVehicleEdit">
+    <!--@mbg.generated-->
+    update rt_box_vehicle_edit
+    set store_id = #{storeId,jdbcType=VARCHAR},
+      replenish_batch_no = #{replenishBatchNo,jdbcType=VARCHAR},
+      vehicle_no = #{vehicleNo,jdbcType=VARCHAR},
+      rt_no = #{rtNo,jdbcType=VARCHAR},
+      product_name = #{productName,jdbcType=VARCHAR},
+      course_id = #{courseId,jdbcType=VARCHAR},
+      course_name = #{courseName,jdbcType=VARCHAR},
+      edit_quantity = #{editQuantity,jdbcType=DECIMAL},
+      bef_quantity = #{befQuantity,jdbcType=DECIMAL},
+      aft_quantity = #{aftQuantity,jdbcType=DECIMAL},
+      shelf_no = #{shelfNo,jdbcType=VARCHAR},
+      employee_no = #{employeeNo,jdbcType=VARCHAR},
+      employee_name = #{employeeName,jdbcType=VARCHAR},
+      is_delete = #{isDelete,jdbcType=TINYINT},
+      create_id = #{createId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_id = #{updateId,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
